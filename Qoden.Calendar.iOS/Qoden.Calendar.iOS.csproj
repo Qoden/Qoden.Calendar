@@ -47,11 +47,6 @@
 		<Reference Include="System.Xml" />
 		<Reference Include="System.Core" />
 		<Reference Include="Xamarin.iOS" />
-		<Reference Include="System.Runtime" />
-		<Reference Include="System.Drawing.Primitives" />
-		<Reference Include="System.Collections" />
-		<Reference Include="System.Threading.Tasks" />
-		<Reference Include="System.IO" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Resources\" />

@@ -2,59 +2,58 @@ using System;
 using Foundation;
 using UIKit;
 using CoreGraphics;
-using Qoden.UI.iOS;
+using Qoden.UI;
 
 namespace Qoden.Calendar.iOS
 {
-	public class CalendarViewElement : QodenView
-	{
-		public CalendarViewElement()
-		{
-		}
+    public class CalendarViewElement : QodenView
+    {
+        public CalendarViewElement()
+        {
+        }
 
-		public CalendarViewElement(NSCoder coder) : base(coder)
-		{
-		}
+        public CalendarViewElement(NSCoder coder) : base(coder)
+        {
+        }
 
-		public CalendarViewElement(NSObjectFlag t) : base(t)
-		{
-		}
+        public CalendarViewElement(NSObjectFlag t) : base(t)
+        {
+        }
 
-		public CalendarViewElement(IntPtr handle) : base(handle)
-		{
-		}
+        public CalendarViewElement(IntPtr handle) : base(handle)
+        {
+        }
 
-		public CalendarViewElement(CGRect frame) : base(frame)
-		{
-		}
+        public CalendarViewElement(CGRect frame) : base(frame)
+        {
+        }
 
-		UILabel title;
+        UILabel title;
 
-		public UILabel Title
-		{
-			get
-			{
-				if (title == null)
-				{
-					title = new UILabel();
-					AddSubview(title);
-					SendSubviewToBack(title);
-				}
-				return title;
-			}
-		}
+        public UILabel Title
+        {
+            get
+            {
+                if (title == null)
+                {
+                    title = new UILabel();
+                    AddSubview(title);
+                    SendSubviewToBack(title);
+                }
+                return title;
+            }
+        }
 
-		public override void LayoutSubviews()
-		{
-			if (title != null)
-			{
-				title.SizeToFit();
-				title.Frame = this.LayoutBox()
-					.CenterVertically().CenterHorizontally().Width(title).Height(title)
-					.AsCGRect();
-			}
-		}
+        protected override void OnLayout(LayoutBuilder layout)
+        {
+            if (title != null)
+            {
+                layout.View(title)
+                     .AutoSize()
+                     .CenterVertically().CenterHorizontally();
+            }
+        }
 
-		public string ReuseId { get; set; }
-	}
+        public string ReuseId { get; set; }
+    }
 }

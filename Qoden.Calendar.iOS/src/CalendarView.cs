@@ -6,7 +6,6 @@ using System.Globalization;
 using CoreGraphics;
 using System.Collections.Generic;
 using Qoden.UI;
-using Qoden.UI.iOS;
 
 namespace Qoden.Calendar.iOS
 {
